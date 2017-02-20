@@ -1,0 +1,12 @@
+{
+  "name": "iiaas",
+  "version": "1.0.0",
+  "description": "Incrementing Integers As A Service",
+  "author": "Dustin Brett <dustinbrett@gmail.com>",
+  "dependencies": {
+    "express": "~4.14.1",
+    "body-parser": "~1.16.1",
+    "express-bearer-token": "~2.1.0",
+    "hat": "~0.0.3"
+  }
+}

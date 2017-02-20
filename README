@@ -1,0 +1,11 @@
+Register as a user:
+	curl -X "POST" http://localhost:3000/v1/register --data "email={email address}&password={password}"
+
+Get the next integer in the sequence:
+	curl http://localhost:3000/v1/next -H "Authorization: Bearer {API key}"
+
+Get the current integer:
+	curl http://localhost:3000/v1/current -H "Authorization: Bearer {API key}"
+
+Reset the current integer:
+	curl -X "PUT" http://localhost:3000/v1/current -H "Authorization: Bearer {API key}" --data "current={non-negative integer}"

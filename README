@@ -1,11 +1,19 @@
+EC2 Deployed API:
+	http://ec2.dustinbrett.com:3000/v1/ (ec2-54-187-178-83.us-west-2.compute.amazonaws.com)
+
+Install:
+	git clone https://github.com/DustinBrett/iiaas.git
+	npm install
+	node server.js
+
 Register as a user:
-	curl -X "POST" http://localhost:3000/v1/register --data "email={email address}&password={password}"
+	curl -X "POST" http://ec2.dustinbrett.com:3000/v1/register --data "email={email address}&password={password}"
 
 Get the next integer in the sequence:
-	curl http://localhost:3000/v1/next -H "Authorization: Bearer {API key}"
+	curl http://ec2.dustinbrett.com:3000/v1/next -H "Authorization: Bearer {API key}"
 
 Get the current integer:
-	curl http://localhost:3000/v1/current -H "Authorization: Bearer {API key}"
+	curl http://ec2.dustinbrett.com:3000/v1/current -H "Authorization: Bearer {API key}"
 
 Reset the current integer:
-	curl -X "PUT" http://localhost:3000/v1/current -H "Authorization: Bearer {API key}" --data "current={non-negative integer}"
+	curl -X "PUT" http://ec2.dustinbrett.com:3000/v1/current -H "Authorization: Bearer {API key}" --data "current={non-negative integer}"

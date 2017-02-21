@@ -31,7 +31,7 @@ const
     return (typeof db.users[token] === "object");
   },
 
-  createUser = (email, password) => { // Create new user with api key (if required)
+  createUser = (email, password) => { // Create new user with API key (if required)
     const token = findToken(email, password) || hat();
 
     if (!confirmAuth(token)) { // Create user structure if non-existent

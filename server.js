@@ -94,15 +94,17 @@ const
   }
 ;
 
-express.use([
-  bearerToken(),
-  bodyParser.urlencoded({ extended: false })
-]);
+express
+  .use([
+    bearerToken(),
+    bodyParser.urlencoded({ extended: false })
+  ])
 
-express.route("/v1/:endpoint") // Monitor GET/PUT/POST requests
-  .get(reqHandler)
-  .put(reqHandler)
-  .post(reqHandler);
+  .route("/v1/:endpoint") // Monitor GET/PUT/POST requests
+    .get(reqHandler)
+    .put(reqHandler)
+    .post(reqHandler)
+;
 
 express.listen(3000, () => {
   console.log("Listening on port 3000.");

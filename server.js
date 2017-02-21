@@ -22,7 +22,7 @@ const
   findToken = (email, password) => { // Search database for existing credentials
     for (let token in db.users) {
       if (db.users[token].email === email && db.users[token].password === password) {
-        return token; // Return API key if credentials exist
+        return token; // Return API key (if credentials exist)
       }
     }
   },

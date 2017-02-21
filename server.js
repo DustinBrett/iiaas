@@ -49,9 +49,9 @@ const
 
   setInteger = (token, integer) => {
     db.users[token].integer = (
-      integer
-      ? integer
-      : db.users[token].integer + 1
+      integer ?
+      integer :
+      db.users[token].integer + 1
     );
 
     db.save();
@@ -60,9 +60,9 @@ const
   checkEndPoint = (req) => {
     if (req.params.endpoint === "register") {
       return (
-        (req.body.email && req.body.password)
-        ? createUser(req.body.email, req.body.password)
-        : "An email address and password are required for registration."
+        (req.body.email && req.body.password) ?
+        createUser(req.body.email, req.body.password) :
+        "An email address and password are required for registration."
       );
     }
 
@@ -87,20 +87,22 @@ const
 
   reqHandler = (req, res) => {
     res.send(
-      req.params.endpoint
-      ? checkEndPoint(req)
-      : "REST endpoint required."
+      req.params.endpoint ?
+      checkEndPoint(req) :
+      "REST endpoint required."
     );
-  };
+  }
+;
 
 express.use(bearerToken());
-express.use(bodyParser.urlencoded({ extended: false }));
+express.use(bodyParser.urlencoded({
+  extended: false
+}));
 
 express.route("/v1/:endpoint") // Monitor GET/PUT/POST requests
   .get(reqHandler)
   .put(reqHandler)
-  .post(reqHandler)
-;
+  .post(reqHandler);
 
 express.listen(3000, () => {
   console.log("Listening on port 3000.");

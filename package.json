@@ -8,5 +8,17 @@
     "body-parser": "~1.16.1",
     "express-bearer-token": "~2.1.0",
     "hat": "~0.0.3"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DustinBrett/iiaas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DustinBrett/iiaas/issues"
+  },
+  "homepage": "https://github.com/DustinBrett/iiaas"
 }

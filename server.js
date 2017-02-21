@@ -94,10 +94,10 @@ const
   }
 ;
 
-express.use(bearerToken());
-express.use(bodyParser.urlencoded({
-  extended: false
-}));
+express.use([
+  bearerToken(),
+  bodyParser.urlencoded({ extended: false })
+]);
 
 express.route("/v1/:endpoint") // Monitor GET/PUT/POST requests
   .get(reqHandler)

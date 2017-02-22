@@ -100,7 +100,7 @@ express
     bodyParser.urlencoded({ extended: false })
   ])
 
-  .route("/v1/:endpoint") // Monitor GET/PUT/POST requests
+  .route(["/v1/", "/v1/:endpoint"]) // Monitor GET/PUT/POST requests
     .get(reqHandler)
     .put(reqHandler)
     .post(reqHandler)
